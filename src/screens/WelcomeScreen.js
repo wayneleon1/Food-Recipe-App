@@ -1,5 +1,6 @@
-import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
+import { View, Text, Image, TouchableOpacity } from "react-native";
+import { colors } from "../constant/Contant";
 
 const WelcomeScreen = ({ navigation }) => {
   return (
@@ -26,7 +27,7 @@ const WelcomeScreen = ({ navigation }) => {
             height: 120,
             width: 120,
             borderRadius: 100,
-            borderColor: "#f96163",
+            borderColor: colors.COLOR_PRIMARY,
             borderWidth: 4,
             overflow: "hidden",
           }}
@@ -45,7 +46,7 @@ const WelcomeScreen = ({ navigation }) => {
             height: 120,
             width: 120,
             borderRadius: 100,
-            borderColor: "#f96163",
+            borderColor: colors.COLOR_PRIMARY,
             borderWidth: 4,
             overflow: "hidden",
           }}
@@ -64,7 +65,7 @@ const WelcomeScreen = ({ navigation }) => {
             height: 120,
             width: 120,
             borderRadius: 100,
-            borderColor: "#f96163",
+            borderColor: colors.COLOR_PRIMARY,
             borderWidth: 4,
             overflow: "hidden",
           }}
@@ -79,7 +80,13 @@ const WelcomeScreen = ({ navigation }) => {
           />
         </View>
       </View>
-      <Text style={{ color: "#f96163", fontSize: 22, fontWeight: "bold" }}>
+      <Text
+        style={{
+          color: colors.COLOR_PRIMARY,
+          fontSize: 22,
+          fontWeight: "bold",
+        }}
+      >
         40K+ Premium Recipes
       </Text>
       <Text
@@ -98,14 +105,16 @@ const WelcomeScreen = ({ navigation }) => {
           navigation.navigate("RecipeList");
         }}
         style={{
-          backgroundColor: "#f96163",
+          backgroundColor: colors.COLOR_PRIMARY,
           borderRadius: 18,
           paddingVertical: 18,
           width: "80%",
           alignItems: "center",
         }}
       >
-        <Text style={{ fontSize: 18, color: "#fff", fontWeight: "700" }}>
+        <Text
+          style={{ fontSize: 18, color: colors.COLOR_LIGHT, fontWeight: "700" }}
+        >
           Let's Go
         </Text>
       </TouchableOpacity>
