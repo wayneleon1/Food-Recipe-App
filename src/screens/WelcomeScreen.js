@@ -1,7 +1,7 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
 
-const WelcomeScreen = () => {
+const WelcomeScreen = ({ navigation }) => {
   return (
     <View style={{ flex: 1, alignItems: "center" }}>
       <View style={{ height: "50%", width: "100%" }}>
@@ -95,7 +95,7 @@ const WelcomeScreen = () => {
       </Text>
       <TouchableOpacity
         onPress={() => {
-          alert("Hello");
+          navigation.navigate("RecipeList");
         }}
         style={{
           backgroundColor: "#f96163",
