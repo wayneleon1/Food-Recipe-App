@@ -1,13 +1,8 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet } from "react-native";
+import AppNavigator from "./src/navigation/AppNavigator";
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Food Recipe App</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+  return <AppNavigator />;
 }
 
 const styles = StyleSheet.create({
