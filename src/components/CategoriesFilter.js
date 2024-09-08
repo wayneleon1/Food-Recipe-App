@@ -1,6 +1,6 @@
 import { ScrollView, StyleSheet, Text, View } from "react-native";
 import React from "react";
-import { categories, colors } from "../constant/Contant";
+import { categories, colors, shadow } from "../constant/Contant";
 
 const CategoriesFilter = () => {
   return (
@@ -15,19 +15,14 @@ const CategoriesFilter = () => {
               padding: 10,
               borderRadius: 8,
               marginRight: 10,
-              shadowColor: colors.COLOR_DARK,
-              shadowOffset: {
-                width: 0,
-                height: 4,
-              },
-              shadowOpacity: 0.1,
-              shadRadius: 7,
               marginVertical: 16,
+              ...shadow,
             }}
           >
             <Text
               style={{
                 color: idx === 0 ? colors.COLOR_LIGHT : colors.COLOR_DARK,
+                fontSize: 16,
               }}
             >
               {item.category}

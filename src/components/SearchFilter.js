@@ -1,7 +1,7 @@
 import { FontAwesome } from "@expo/vector-icons";
 import React from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
-import { colors } from "../constant/Contant";
+import { StyleSheet, TextInput, View } from "react-native";
+import { colors, shadow } from "../constant/Contant";
 
 const SearchFilter = ({ icon, placeholder }) => {
   return (
@@ -12,14 +12,7 @@ const SearchFilter = ({ icon, placeholder }) => {
         marginVertical: 16,
         borderRadius: 8,
         padding: 16,
-
-        shadowColor: colors.COLOR_DARK,
-        shadowOffset: {
-          width: 0,
-          height: 4,
-        },
-        shadowOpacity: 0.1,
-        shadRadius: 7,
+        ...shadow,
       }}
     >
       <FontAwesome name={icon} size={20} color={colors.COLOR_PRIMARY} />

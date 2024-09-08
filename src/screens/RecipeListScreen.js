@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import { SafeAreaView } from "react-native-safe-area-context";
 import SearchFilter from "../components/SearchFilter";
 import CategoriesFilter from "../components/CategoriesFilter";
+import RecipeCard from "../components/RecipeCard";
 
 const RecipeListScreen = () => {
   return (
@@ -11,8 +12,12 @@ const RecipeListScreen = () => {
       <Header headerText="Hi, Leon" headIcon="bell-o" />
       <SearchFilter icon="search" placeholder="Search Your Fav Recipes" />
       <View>
-        <Text style={{ fontSize: 22, fontWeight: "bold" }}>categories</Text>
+        <Text style={{ fontSize: 22, fontWeight: "bold" }}>Categories</Text>
         <CategoriesFilter />
+      </View>
+      <View>
+        <Text style={{ fontSize: 22, fontWeight: "bold" }}>Recipes</Text>
+        <RecipeCard />
       </View>
     </SafeAreaView>
   );
