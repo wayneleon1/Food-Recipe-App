@@ -10,8 +10,10 @@ import React from "react";
 import { colors, recipeList } from "../constant/Contant";
 import { shadow } from "../constant/shadowStyles";
 import { FontAwesome } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const RecipeCard = () => {
+  const navigation = useNavigation();
   return (
     <View>
       <FlatList
@@ -19,7 +21,7 @@ const RecipeCard = () => {
         renderItem={({ item }) => (
           <Pressable
             onPress={() => {
-              alert(item.name);
+              navigation.navigate("RecipeDetail");
             }}
             style={{
               backgroundColor: colors.COLOR_LIGHT,
