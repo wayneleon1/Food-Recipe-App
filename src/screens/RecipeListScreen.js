@@ -15,7 +15,7 @@ const RecipeListScreen = () => {
         <Text style={{ fontSize: 22, fontWeight: "bold" }}>Categories</Text>
         <CategoriesFilter />
       </View>
-      <View>
+      <View style={{ flex: 1, paddingBottom: 20 }}>
         <Text style={{ fontSize: 22, fontWeight: "bold" }}>Recipes</Text>
         <RecipeCard />
       </View>

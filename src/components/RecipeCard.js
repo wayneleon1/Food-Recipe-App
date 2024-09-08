@@ -1,6 +1,15 @@
-import { FlatList, StyleSheet, Text, View } from "react-native";
+import {
+  FlatList,
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  Pressable,
+} from "react-native";
 import React from "react";
-import { colors, recipeList, shadow } from "../constant/Contant";
+import { colors, recipeList } from "../constant/Contant";
+import { shadow } from "../constant/shadowStyles";
+import { FontAwesome } from "@expo/vector-icons";
 
 const RecipeCard = () => {
   return (
@@ -8,10 +17,48 @@ const RecipeCard = () => {
       <FlatList
         data={recipeList}
         renderItem={({ item }) => (
-          <View style={{ backgroundColor: colors.COLOR_LIGHT, ...shadow }}>
+          <Pressable
+            onPress={() => {
+              alert(item.name);
+            }}
+            style={{
+              backgroundColor: colors.COLOR_LIGHT,
+              ...shadow,
+              marginVertical: 16,
+              borderRadius: 16,
+              alignItems: "center",
+              paddingHorizontal: 8,
+              paddingVertical: 10,
+            }}
+          >
+            <Image
+              source={item.image}
+              style={{
+                width: 150,
+                height: 150,
+                resizeMode: "center",
+              }}
+            />
             <Text>{item.name}</Text>
-          </View>
+            <View style={{ flexDirection: "row", marginTop: 8 }}>
+              <Text>{item.time}</Text>
+              <Text> | </Text>
+              <View style={{ flexDirection: "row" }}>
+                <Text style={{ marginRight: 4 }}>{item.rating}</Text>
+                <FontAwesome
+                  name="star"
+                  size={16}
+                  color={colors.COLOR_PRIMARY}
+                />
+              </View>
+            </View>
+          </Pressable>
         )}
+        numColumns={2}
+        columnWrapperStyle={{
+          justifyContent: "space-between",
+        }}
+        showsVerticalScrollIndicator={false}
       />
     </View>
   );
