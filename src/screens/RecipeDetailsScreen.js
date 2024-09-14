@@ -4,9 +4,10 @@ import { colors } from "../constant/Contant";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { FontAwesome } from "@expo/vector-icons";
 
-const RecipeDetailsScreen = ({ navigation }) => {
+const RecipeDetailsScreen = ({ navigation, route }) => {
+  const { item } = route.params;
   return (
-    <View style={{ flex: 1, backgroundColor: "#6f4e37" }}>
+    <View style={{ flex: 1, backgroundColor: item.color }}>
       <SafeAreaView
         style={{
           flexDirection: "row",
@@ -19,9 +20,9 @@ const RecipeDetailsScreen = ({ navigation }) => {
             navigation.goBack();
           }}
         >
-          <FontAwesome name="arrow-circle-left" size={28} color="black" />
+          <FontAwesome name="arrow-circle-left" size={28} color="white" />
         </Pressable>
-        <FontAwesome name="heart-o" size={28} color="black" />
+        <FontAwesome name="heart-o" size={28} color="white" />
       </SafeAreaView>
       <View
         style={{
@@ -31,11 +32,11 @@ const RecipeDetailsScreen = ({ navigation }) => {
           borderTopLeftRadius: 56,
           borderTopRightRadius: 56,
           alignItems: "center",
+          paddingHorizontal: 16,
         }}
       >
         <View
           style={{
-            // backgroundColor: "yellow",s
             height: 300,
             width: 300,
             position: "absolute",
@@ -43,7 +44,7 @@ const RecipeDetailsScreen = ({ navigation }) => {
           }}
         >
           <Image
-            source={require("../../assets/images/welcome.png")}
+            source={item.image}
             style={{
               width: "100%",
               height: "100%",
@@ -51,6 +52,12 @@ const RecipeDetailsScreen = ({ navigation }) => {
             }}
           />
         </View>
+        <Text style={{ marginTop: 160, fontSize: 28, fontWeight: "bold" }}>
+          {item.name}
+        </Text>
+        <Text style={{ marginVertical: 16, fontSize: 20 }}>
+          {item.description}
+        </Text>
       </View>
     </View>
   );

@@ -33,7 +33,7 @@ const WelcomeScreen = ({ navigation }) => {
           }}
         >
           <Image
-            source={require("../../assets/images/burger1.jpeg")}
+            source={require("../../assets/images/burger1.png")}
             style={{
               height: "100%",
               width: "100%",
@@ -52,7 +52,7 @@ const WelcomeScreen = ({ navigation }) => {
           }}
         >
           <Image
-            source={require("../../assets/images/burger2.jpeg")}
+            source={require("../../assets/images/burger2.png")}
             style={{
               height: "100%",
               width: "100%",
@@ -71,7 +71,7 @@ const WelcomeScreen = ({ navigation }) => {
           }}
         >
           <Image
-            source={require("../../assets/images/burger3.jpeg")}
+            source={require("../../assets/images/burger3.png")}
             style={{
               height: "100%",
               width: "100%",

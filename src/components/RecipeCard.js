@@ -21,7 +21,9 @@ const RecipeCard = () => {
         renderItem={({ item }) => (
           <Pressable
             onPress={() => {
-              navigation.navigate("RecipeDetail");
+              navigation.navigate("RecipeDetail", {
+                item: item,
+              });
             }}
             style={{
               backgroundColor: colors.COLOR_LIGHT,
